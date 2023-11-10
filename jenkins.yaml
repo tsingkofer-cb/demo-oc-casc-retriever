@@ -1,0 +1,170 @@
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "com.cloudbees.jenkins.plugins.administrative_monitors.CJOCBuildSecurityMonitor"
+  - "hudson.util.DoubleLaunchChecker"
+  labelAtoms:
+  - name: "built-in"
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "core-oc-offline"
+      url: "file:/tmp/jenkins/war/WEB-INF/plugins/update-center.json"
+    - id: "cap-core-oc"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-oc/update-center.json"
+  views:
+  - masters:
+      columns:
+      - "status"
+      - "weather"
+      - "jobName"
+      - "masterPodStatusViewColumn"
+      - "manageMaster"
+      - "masterConfigurationStaleViewColumn"
+      - "totalJobsViewColumn"
+      - "queueSizeViewColumn"
+      - "jenkinsVersionViewColumn"
+      - "listSelectionColumn"
+      jobFilters:
+      - "connectedMasterViewFilter"
+      name: "Controllers"
+      recurse: true
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+beekeeper:
+  enabled: true
+  securityWarnings:
+    enabledForCore: true
+    enabledForPlugins: true
+  upgrades:
+    autoDowngradePlugins: false
+    autoUpgradePlugins: false
+notificationConfiguration:
+  enabled: true
+  router: "operationsCenter"
+cloudBeesCasCServer:
+  disableRemoteValidation: false
+  visibility: false
+masterprovisioning:
+  dockerImageDefinitionConfiguration:
+    images:
+    - imageTag: "cloudbees/cloudbees-core-mm:2.414.3.7"
+      name: "CloudBees CI - Managed Controller - 2.414.3.7"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  sSHD:
+    port: -1
+  securitySettingsEnforcement:
+    global:
+      realmAndAuthorization:
+        canCustomMapping: false
+        canOverride: true
+        defaultMappingFactory: "restrictedEquivalentRAMF"
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  bundleStorageService:
+    activated: true
+    bundles:
+    - name: "1b5de33d-dfd7-45ce-a44a-461c0eb55d78"
+      retriever:
+        SCM:
+          ghChecksActivated: false
+          scmSource:
+            git:
+              id: "6c4c1f89-7015-42b4-8a5b-428c5826c91c"
+              remote: "https://github.com/tsingkofer-cb/cbci-casc-bundles"
+              traits:
+              - "gitBranchDiscovery"
+    pollingPeriod: 120
+    purgeOnDeactivation: false
+  cascAutoControllerProvisioning:
+    duration: 60
+    fireAndForget: true
+    initialDelay: 15
+    provisionControllerOnCreation: false
+    timeout: 600
+  cascItemsConfiguration:
+    variableInterpolationEnabledForAdmin: false
+    variableInterpolationEnabledForNonAdmin: false
+  experimentalPlugins:
+    enabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  headerLabel:
+    text: "THIS IS THE OC"
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "https://tsingkofer.ps.beescloud.com/cjoc/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  operationsCenterSharedConfiguration:
+    enabled: false
+  pollSCM:
+    pollingThreadCount: 10
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  usageStatisticsCloudBees:
+    disabledJenkinsUsageStatistics: true
+    usageStatisticsCollected: false
+tool:
+  cloudbeesPluginUsageAnalyzer:
+    enabled: true
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
