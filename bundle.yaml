@@ -9,4 +9,4 @@ plugins:
 items:
   - "items.yaml"
   - "new-controller.yaml"
-  # - "new-controller-2.yaml"
+  - "new-controller-2.yaml"
