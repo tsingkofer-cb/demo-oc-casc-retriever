@@ -8,3 +8,5 @@ plugins:
   - "plugins.yaml"
 items:
   - "items.yaml"
+  - "new-controller.yaml"
+  - "new-controller-2.yaml"
