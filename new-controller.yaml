@@ -4,8 +4,6 @@ removeStrategy:
 items:
 - kind: folder
   name: team-controllers
-  description: ''
-  displayName: team-controllers
   items:
   - kind: managedController
     name: new-controller
