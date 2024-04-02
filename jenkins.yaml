@@ -12,6 +12,7 @@ jenkins:
   disabledAdministrativeMonitors:
   - "com.cloudbees.jenkins.plugins.administrative_monitors.CJOCBuildSecurityMonitor"
   - "hudson.util.DoubleLaunchChecker"
+  - "invalidBundleAssignment"
   labelAtoms:
   - name: "built-in"
   markupFormatter:
@@ -28,17 +29,6 @@ jenkins:
   quietPeriod: 5
   remotingSecurity:
     enabled: true
-  securityRealm:
-    local:
-      users:
-        - id: "tsingkofer"
-          name: "Tyler Singkofer"
-          password: "${readFile:/var/secrets/tsingkofer-admin}"
-          properties:
-            - blueSteelRedirectOptOutProperty:
-                optOut: true
-            - mailer:
-                emailAddress: "tsingkofer@cloudbees.com"
   scmCheckoutRetryCount: 0
   slaveAgentPort: 50000
   updateCenter:
@@ -74,22 +64,25 @@ beekeeper:
     enabledForPlugins: true
   upgrades:
     autoDowngradePlugins: false
-    autoUpgradePlugins: false
+    autoUpgradePlugins: true
 notificationConfiguration:
   enabled: true
   router: "operationsCenter"
 cloudBeesCasCServer:
   disableRemoteValidation: false
-  visibility: false
-masterprovisioning:
-  dockerImageDefinitionConfiguration:
-    images:
-    - imageTag: "cloudbees/cloudbees-core-mm:2.414.3.7"
-      name: "CloudBees CI - Managed Controller - 2.414.3.7"
+  visibility: true
+controllerLifecycleNotifications:
+  authenticator: "none"
+  enabled: true
+  ignoreTlsConnectionErrors: false
+  webhookUrl: "https://tsingkofer.ps.beescloud.com/cjoc/webhooks/osLZRpC/"
 globalCredentialsConfiguration:
   configuration:
     providerFilter: "none"
     typeFilter: "none"
+appearance:
+  prism:
+    theme: PRISM
 security:
   anonymizeSupportBundle:
     enabled: false
@@ -127,8 +120,25 @@ unclassified:
               remote: "https://github.com/tsingkofer-cb/cbci-casc-bundles"
               traits:
               - "gitBranchDiscovery"
+    - name: "child-repo"
+      retriever:
+        SCM:
+          ghChecksActivated: false
+          scmSource:
+            git:
+              id: "8caf68e6-d8ad-472c-88d8-bada4d0a74a7"
+              remote: "https://github.com/tsingkofer-cb/cbci-casc-child-bundles"
+              traits:
+              - "gitBranchDiscovery"
+    checkOutTimeout: 600
     pollingPeriod: 120
-    purgeOnDeactivation: false
+    purgeOnDeactivation: true
+  bundleUpdateTiming:
+    automaticReload: false
+    automaticRestart: false
+    rejectWarnings: false
+    reloadAlwaysOnRestart: false
+    skipNewVersions: false
   cascAutoControllerProvisioning:
     duration: 60
     fireAndForget: true
@@ -138,6 +148,8 @@ unclassified:
   cascItemsConfiguration:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
+  cloudbeesPlatform:
+    url: "https://cd.tsingkofer.ps.beescloud.com/"
   experimentalPlugins:
     enabled: false
   fingerprints:
@@ -169,6 +181,8 @@ unclassified:
   usageStatisticsCloudBees:
     disabledJenkinsUsageStatistics: true
     usageStatisticsCollected: false
+  validationVisualization:
+    quiet: false
 tool:
   cloudbeesPluginUsageAnalyzer:
     enabled: true
