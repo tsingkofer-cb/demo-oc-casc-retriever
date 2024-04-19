@@ -1,6 +1,6 @@
 removeStrategy:
   rbac: SYNC
-  items: SYNC
+  items: NONE
 
 root: "/team-controllers"
 
