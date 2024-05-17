@@ -10,24 +10,24 @@ items:
       - com.cloudbees.opscenter.server.model.ManagedMaster
       - com.cloudbees.opscenter.server.model.SharedCloud
       filter: true
-  groups:
-  - members:
-      external_groups:
-      - ORG-ALL
-    roles:
-    - name: browse
-      grantedAt: current
-      propagates: false
-    name: CloudBees CI Users
   # groups:
-  # - name: CloudBees CI Users
+  # - members:
+  #     external_groups:
+  #     - ORG-ALL
   #   roles:
-  #   - name: browser
+  #   - name: browse
   #     grantedAt: current
   #     propagates: false
-  #   members:
-  #     unknown:
-  #     - ORG-ALL-RBAC
+  #   name: CloudBees CI Users
+  groups:
+  - name: CloudBees CI Users
+    roles:
+    - name: browser
+      grantedAt: current
+      propagates: false
+    members:
+      unknown:
+      - ORG-ALL-RBAC
   # - name: Cloudbees CI Migration Team
   #   roles:
   #   - name: administrator
