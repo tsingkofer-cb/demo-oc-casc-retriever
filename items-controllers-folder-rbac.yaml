@@ -26,19 +26,19 @@ items:
       grantedAt: current
       propagates: false
     members:
-      unknown:
-      - ORG-ALL-RBAC
-  # - name: Cloudbees CI Migration Team
-  #   roles:
-  #   - name: administrator
-  #     grantedAt: current
-  #   members:
-  #     unknown:
-  #     - TEAM-CBCI-MIGRATION
-  # - name: KPC Automation
-  #   roles:
-  #   - name: kpc_automation
-  #     grantedAt: current
-  #   members:
-  #     unknown:
-  #     - TEAM-CBCI-KPC-AGENTS
+      external_groups:
+      - ORG-ALL-KEYSIGHT
+  - name: Cloudbees CI Migration Team
+    roles:
+    - name: administrator
+      grantedAt: current
+    members:
+      external_groups:
+      - TEAM-CBCI-MIGRATION
+  - name: KPC Automation
+    roles:
+    - name: kpc_automation
+      grantedAt: current
+    members:
+      external_groups:
+      - TEAM-CBCI-KPC-AGENTS
