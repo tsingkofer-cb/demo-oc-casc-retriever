@@ -1,0 +1,35 @@
+items:
+- kind: folder
+  name: rbac-controllers
+  description: ''
+  displayName: rbac-controllers
+  properties:
+  - itemRestrictions:
+      allowedTypes:
+      - com.cloudbees.opscenter.server.model.SharedSlave
+      - com.cloudbees.opscenter.server.model.ManagedMaster
+      - com.cloudbees.opscenter.server.model.SharedCloud
+      filter: true
+  groups:
+  - name: CloudBees CI Users
+    roles:
+    - name: browser
+      grantedAt: current
+      propagates: false
+    members:
+      external_groups:
+      - ORG-ALL-RBAC
+  - name: Cloudbees CI Migration Team
+    roles:
+    - name: administrator
+      grantedAt: current
+    members:
+      external_groups:
+      - TEAM-CBCI-MIGRATION
+  - name: KPC Automation
+    roles:
+    - name: kpc_automation
+      grantedAt: current
+    members:
+      external_groups:
+      - TEAM-CBCI-KPC-AGENTS
