@@ -12,7 +12,7 @@ items:
       filter: true
   groups:
   - members:
-      internal_groups:
+      external_groups:
       - cjoc-non-prop
     roles:
     - name: browse
