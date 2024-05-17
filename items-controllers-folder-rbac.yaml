@@ -13,7 +13,7 @@ items:
   groups:
   - members:
       external_groups:
-      - cjoc-non-prop
+      - ORG-ALL
     roles:
     - name: browse
       grantedAt: current
