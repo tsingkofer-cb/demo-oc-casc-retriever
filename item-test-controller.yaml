@@ -16,26 +16,26 @@ items:
     properties:
     - healthReporting:
         enabled: true
-    groups:
-    - name: CBCI Controller Administrators
-      roles:
-      - name: administrator
-        grantedAt: current
-      members:
-        external_groups:
-        - TEAM-FAKE_GROUP_1
-    - name: CBCI Controller Developers
-      roles:
-      - name: developer
-        grantedAt: currentitem
-      members:
-        external_groups:
-        - TEAM-FAKE_GROUP_2
-    - name: CBCI Controller Browsers
-      roles:
-      - name: developer
-        grantedAt: current
-      members:
-        external_groups:
-        - ORG-ALL-RBAC
+    # groups:
+    # - name: CBCI Controller Administrators
+    #   roles:
+    #   - name: administrator
+    #     grantedAt: current
+    #   members:
+    #     external_groups:
+    #     - TEAM-FAKE_GROUP_1
+    # - name: CBCI Controller Developers
+    #   roles:
+    #   - name: developer
+    #     grantedAt: currentitem
+    #   members:
+    #     external_groups:
+    #     - TEAM-FAKE_GROUP_2
+    # - name: CBCI Controller Browsers
+    #   roles:
+    #   - name: developer
+    #     grantedAt: current
+    #   members:
+    #     external_groups:
+    #     - ORG-ALL-RBAC
 
