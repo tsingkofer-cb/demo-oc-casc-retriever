@@ -10,26 +10,26 @@ items:
       - com.cloudbees.opscenter.server.model.ManagedMaster
       - com.cloudbees.opscenter.server.model.SharedCloud
       filter: true
-groups:
+  groups:
   - name: CloudBees CI Users
     roles:
     - name: browser
       grantedAt: current
       propagates: false
     members:
-      external_groups:
+      unknown:
       - ORG-ALL-RBAC
   - name: Cloudbees CI Migration Team
     roles:
     - name: administrator
       grantedAt: current
     members:
-      external_groups:
+      unknown:
       - TEAM-CBCI-MIGRATION
   - name: KPC Automation
     roles:
     - name: kpc_automation
       grantedAt: current
     members:
-      external_groups:
+      unknown:
       - TEAM-CBCI-KPC-AGENTS
