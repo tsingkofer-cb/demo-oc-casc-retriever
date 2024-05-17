@@ -10,7 +10,7 @@ items:
       - com.cloudbees.opscenter.server.model.ManagedMaster
       - com.cloudbees.opscenter.server.model.SharedCloud
       filter: true
-  groups:
+groups:
   - name: CloudBees CI Users
     roles:
     - name: browser
