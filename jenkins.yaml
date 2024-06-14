@@ -149,7 +149,7 @@ unclassified:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
   cloudbeesPlatform:
-    url: "https://cd.tsingkofer.ps.beescloud.com/"
+    url: "https://flow-web.cloudbees-cd/"
   experimentalPlugins:
     enabled: false
   fingerprints:
