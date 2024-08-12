@@ -12,7 +12,7 @@ items:
       cpus: 1.0
       fsGroup: '1000'
       disk: 10
-      javaOptions: -XshowSettings:vm -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:+DisableExplicitGC
+      javaOptions: -XshowSettings:vm -XX:+AlwaysPreTouch -XX:+UseG1GC 
         -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -Dhudson.slaves.NodeProvisioner.initialDelay=0
   properties:
   - healthReporting:
