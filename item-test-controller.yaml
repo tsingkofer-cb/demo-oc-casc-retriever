@@ -1,7 +1,4 @@
 root: rbac-controllers
-removeStrategy:
-  rbac: SYNC
-  items: SYNC
 items:
 - name: test-controller
   kind: managedController
