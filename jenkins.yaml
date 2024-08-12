@@ -73,9 +73,8 @@ cloudBeesCasCServer:
   visibility: true
 controllerLifecycleNotifications:
   authenticator: "none"
-  enabled: true
+  enabled: false
   ignoreTlsConnectionErrors: false
-  webhookUrl: "https://tsingkofer.ps.beescloud.com/cjoc/webhooks/osLZRpC/"
 globalCredentialsConfiguration:
   configuration:
     providerFilter: "none"
