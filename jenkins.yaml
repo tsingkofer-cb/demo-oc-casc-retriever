@@ -149,6 +149,8 @@ unclassified:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
   cloudbeesPlatform:
+    server:
+      ignoreSslConnectionErrors: true
     url: "https://flow-web.cloudbees-cd/"
   experimentalPlugins:
     enabled: false
