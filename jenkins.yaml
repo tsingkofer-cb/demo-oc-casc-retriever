@@ -98,7 +98,7 @@ masterprovisioning:
     systemProperties: |-
       jenkins.branch.WorkspaceLocatorImpl.PATH_MAX=30
       file.encoding=UTF-8
-      jenkins.model.Jenkins.workspacesDir=/tmp/jenkins/workspace/\\\\\^${ITEM_FULL_NAME}"
+      jenkins.model.Jenkins.workspacesDir=/tmp/jenkins/workspace/\\^${ITEM_FULL_NAME}"
 security:
   anonymizeSupportBundle:
     enabled: false
