@@ -83,6 +83,22 @@ globalCredentialsConfiguration:
 appearance:
   prism:
     theme: PRISM
+masterprovisioning:
+  kubernetes:
+    clusterEndpoints:
+    - id: "default"
+      jenkinsUrl: "http://cjoc.cloudbees-core.svc.cluster.local/cjoc/"
+      name: "kubernetes"
+      serviceExposure:
+        ingress:
+          ingressClass: "nginx"
+    cpus: "1.0"
+    disk: 50
+    memory: 3072
+    systemProperties: |-
+      jenkins.branch.WorkspaceLocatorImpl.PATH_MAX=30
+      file.encoding=UTF-8
+      jenkins.model.Jenkins.workspacesDir=/tmp/jenkins/workspace/\\\\\^${ITEM_FULL_NAME}"
 security:
   anonymizeSupportBundle:
     enabled: false
