@@ -1,8 +1,5 @@
 jenkins:
   authorizationStrategy: "cloudBeesRoleBasedAccessControl"
-  crumbIssuer:
-    standard:
-      excludeClientIPFromCrumb: true
   disableRememberMe: false
   disabledAdministrativeMonitors:
   - "com.cloudbees.jenkins.plugins.administrative_monitors.CJOCBuildSecurityMonitor"
